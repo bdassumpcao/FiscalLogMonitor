@@ -46,7 +46,7 @@ begin
     FLogFolder := LJson.GetValue<string>('logFolder', '');
     FServerLifecycleLogPath := LJson.GetValue<string>('serverLifecycleLogPath', '');
     FDatabasePath := LJson.GetValue<string>('databasePath', '');
-    FBasePath := LJson.GetValue<string>('basePath', '/ServidorLog');
+    FBasePath := LJson.GetValue<string>('basePath', 'ServidorLog');
     FPort := LJson.GetValue<Integer>('port', 9100);
     FPollingIntervalMs := LJson.GetValue<Integer>('pollingIntervalMs', 3000);
   finally

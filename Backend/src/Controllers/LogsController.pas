@@ -41,13 +41,13 @@ end;
 
 class procedure TLogsController.RegisterRoutes;
 begin
-  THorse.Get(TAppConfig.BasePath + '/health',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('health',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     begin
       Res.Send<TJSONObject>(TJSONObject.Create.AddPair('status', 'ok'));
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/summary',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/summary',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -82,7 +82,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/errors',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/errors',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -131,7 +131,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/metrics/daily',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/metrics/daily',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -169,7 +169,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/metrics/session',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/metrics/session',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -206,7 +206,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/metrics/callback',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/metrics/callback',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -243,7 +243,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/recommendations',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/recommendations',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -288,7 +288,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/server-lifecycle/daily',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/server-lifecycle/daily',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -328,7 +328,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/server-lifecycle/events',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/server-lifecycle/events',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -396,7 +396,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/details',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/details',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
@@ -510,7 +510,7 @@ begin
       end;
     end);
 
-  THorse.Get(TAppConfig.BasePath + '/logs/details/:id',
+  THorse.Group.Prefix(TAppConfig.BasePath).Get('logs/details/:id',
     procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       Q: TFDQuery;
