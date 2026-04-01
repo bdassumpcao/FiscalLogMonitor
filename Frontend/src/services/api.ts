@@ -1,4 +1,4 @@
-export const API_BASE = "http://192.168.100.108:9100/ServidorLog";
+export const API_BASE = "https://fiscalfacil.com/ServidorLog";
 
 export type Summary = {
   totalLogs: number;
@@ -104,7 +104,10 @@ export async function getRecommendations() {
   return (await res.json()) as Recommendation[];
 }
 
-export async function getLogDetails(filter: "error" | "day" | "session" | "callback", value: string) {
+export async function getLogDetails(
+  filter: "error" | "day" | "session" | "callback",
+  value: string,
+) {
   const url = `${API_BASE}/logs/details?filter=${encodeURIComponent(filter)}&value=${encodeURIComponent(value)}`;
   const res = await fetch(url);
   if (!res.ok) throw new Error("Failed to fetch log details");
