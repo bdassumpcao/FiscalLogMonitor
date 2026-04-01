@@ -1,0 +1,65 @@
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.tmp
+*.temp
+
+# Logs
+*.log
+logs/
+
+# Frontend (React/Vite)
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.vite/
+Frontend/.cache/
+Frontend/coverage/
+Frontend/.eslintcache
+
+# Delphi / RAD Studio build artifacts
+Backend/**/*.dcu
+Backend/**/*.ddp
+Backend/**/*.dcp
+Backend/**/*.~*
+Backend/**/*.identcache
+Backend/**/*.local
+Backend/**/*.stat
+Backend/**/*.bak
+Backend/**/*.drc
+Backend/**/*.map
+Backend/**/*.rsm
+Backend/**/*.tds
+Backend/**/*.exe
+Backend/**/*.dll
+Backend/**/*.bpl
+Backend/**/*.dcpil
+Backend/**/*.so
+Backend/**/*.apk
+Backend/**/*.app
+Backend/**/__history/
+Backend/**/Win32/
+Backend/**/Win64/
+Backend/**/Debug/
+Backend/**/Release/
+
+# Delphi project user files
+Backend/**/*.dproj.local
+Backend/**/*.groupproj.local
+Backend/**/*.deployproj.local
+
+# Firebird runtime/generated files (local environment)
+Backend/**/*.fdb
+Backend/**/*.fbk
+Backend/**/*.lck
+
+# Local app configuration overrides
+Backend/appsettings.local.json
+Frontend/.env.local
+Frontend/.env.*.local
+
+# Test/output folders
+coverage/
+out/
+temp/
